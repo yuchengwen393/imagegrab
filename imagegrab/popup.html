@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>图提取 ImageGrab</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      width: 300px; margin: 0; padding: 16px;
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      color: #0d1224;
+      background: #f6f3ea;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff;
+      background: linear-gradient(135deg, #6d5efc, #2dd4bf);
+    }
+    h1 { margin: 0; font-size: 15px; }
+    p { margin: 3px 0 0; font-size: 10.5px; color: #6f7787; }
+    .card {
+      margin-top: 14px; padding: 12px; border-radius: 12px;
+      background: #fff; border: 1px solid #e6e3d9; font-size: 11.5px; line-height: 1.65; color: #4d5566;
+    }
+    .count { font-size: 20px; font-weight: 700; color: #4c3ee0; }
+    button {
+      width: 100%; margin-top: 12px; border: 0; border-radius: 9px; padding: 10px;
+      color: #fff; font-size: 12px; font-weight: 700; cursor: pointer;
+      background: linear-gradient(135deg, #6d5efc, #2dd4bf);
+    }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .hint { margin-top: 9px; font-size: 10px; color: #8b93a1; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+        <rect x="3.5" y="5" width="17" height="14" rx="2.2" stroke="currentColor" stroke-width="1.6"/>
+        <path d="m6 16 3.4-3.6 2.7 2.6 2.1-2.2 3.4 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h1>图提取 ImageGrab</h1>
+      <p>电商图片提取下载插件</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div>最近的提取结果</div>
+    <div><span class="count" id="count">0</span> 张图片</div>
+    <div class="hint" id="hint">在商品详情页点击右下角「获取图片」后，这里会显示数量。</div>
+  </div>
+
+  <button id="openGallery" disabled>打开图片画廊</button>
+  <div class="hint">支持淘宝 / 天猫 / 京东 / 拼多多商家版。图片只在本地处理。</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+*.pdf
+新建文本文档.txt
+ai-chat/
+screenshots/
+作业提交.md
+node_modules/
+__pycache__/
+*.log

@@ -1,0 +1,159 @@
+/* 图提取 ImageGrab - 页面悬浮按钮 */
+#imagegrab-root,
+#imagegrab-root * {
+  box-sizing: border-box !important;
+}
+
+#imagegrab-root {
+  all: initial !important;
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 28px !important;
+  z-index: 2147483647 !important;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  color: #fff !important;
+  display: block !important;
+}
+
+#imagegrab-root .ig-fab {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 12px 17px 12px 14px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #6d5efc 0%, #2dd4bf 100%) !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  box-shadow: 0 12px 30px rgba(44, 34, 120, 0.32), 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease !important;
+  user-select: none !important;
+}
+
+#imagegrab-root .ig-fab:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 36px rgba(44, 34, 120, 0.4), 0 3px 8px rgba(0, 0, 0, 0.14) !important;
+  filter: brightness(1.04) !important;
+}
+
+#imagegrab-root .ig-fab:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+#imagegrab-root .ig-fab:disabled {
+  cursor: wait !important;
+  opacity: 0.85 !important;
+}
+
+#imagegrab-root .ig-fab-icon {
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: none !important;
+}
+
+#imagegrab-root .ig-fab-icon svg {
+  display: block !important;
+}
+
+#imagegrab-root .ig-fab-label {
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+#imagegrab-root .ig-fab-spinner {
+  width: 14px !important;
+  height: 14px !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  border-top-color: #fff !important;
+  border-radius: 50% !important;
+  display: none !important;
+  animation: ig-spin 0.75s linear infinite !important;
+}
+
+#imagegrab-root .ig-loading .ig-fab-spinner {
+  display: inline-block !important;
+}
+
+#imagegrab-root .ig-loading .ig-fab-icon {
+  display: none !important;
+}
+
+#imagegrab-root .ig-fab-count {
+  min-width: 20px !important;
+  height: 20px !important;
+  padding: 0 6px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#imagegrab-root .ig-toast {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 58px !important;
+  max-width: 280px !important;
+  padding: 10px 13px !important;
+  border-radius: 10px !important;
+  background: #10162c !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  line-height: 1.55 !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24) !important;
+  opacity: 0 !important;
+  transform: translateY(6px) !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+  white-space: normal !important;
+}
+
+#imagegrab-root .ig-toast-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+#imagegrab-root .ig-toast-success {
+  border-left: 3px solid #2dd4bf !important;
+}
+
+#imagegrab-root .ig-toast-warn {
+  border-left: 3px solid #f4b942 !important;
+}
+
+#imagegrab-root .ig-toast-error {
+  border-left: 3px solid #ef6461 !important;
+}
+
+@keyframes ig-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  #imagegrab-root {
+    right: 14px !important;
+    bottom: 18px !important;
+  }
+  #imagegrab-root .ig-fab {
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+  }
+  #imagegrab-root .ig-fab-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}

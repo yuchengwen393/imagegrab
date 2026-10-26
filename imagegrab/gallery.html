@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片画廊 · 图提取 ImageGrab</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+          <rect x="3.5" y="5" width="17" height="14" rx="2.2" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="9" cy="10" r="1.5" stroke="currentColor" stroke-width="1.4"/>
+          <path d="m6 16 3.4-3.6 2.7 2.6 2.1-2.2 3.4 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>图提取 <span>ImageGrab</span></h1>
+        <p>电商图片提取结果</p>
+      </div>
+    </div>
+    <div class="source">
+      <span class="source-dot"></span>
+      <a id="sourceLink" href="#" target="_blank" rel="noreferrer">商品详情页</a>
+    </div>
+    <div class="top-actions">
+      <button class="ghost" id="closeBtn">关闭页面</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="summary">
+      <div class="summary-main">
+        <span class="eyebrow">提取结果</span>
+        <h2 id="pageTitle">图片画廊</h2>
+        <p id="pageUrl">正在读取提取结果...</p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <strong id="totalCount">0</strong>
+          <span>张图片</span>
+        </div>
+        <div class="stat stat-accent">
+          <strong id="selectedCount">0</strong>
+          <span>已选中</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="toolbar-left">
+        <button class="chip" id="selectAll">全选</button>
+        <button class="chip" id="invert">反选</button>
+        <button class="chip" id="clearSel">取消选择</button>
+      </div>
+      <div class="toolbar-right">
+        <span class="status" id="statusText">加载中...</span>
+        <button class="primary" id="downloadBtn" disabled>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none">
+            <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          下载选中
+        </button>
+      </div>
+    </section>
+
+    <div class="progress-wrap" id="progressWrap" hidden>
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+
+    <div class="empty" id="empty" hidden>
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none">
+          <rect x="3.5" y="5" width="17" height="14" rx="2.2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="m6 16 3.4-3.6 2.7 2.6 2.1-2.2 3.4 3.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <strong>还没有提取结果</strong>
+      <span>请回到淘宝 / 天猫 / 京东 / 拼多多商品详情页，点击右下角的「获取图片」按钮。</span>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="关闭预览">×</button>
+    <img id="lightboxImg" alt="图片预览">
+  </div>
+
+  <script src="zip.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
