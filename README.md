@@ -64,7 +64,8 @@ http://localhost:8000/docs/index.html
 2. 仓库 **Settings → Pages**，Source 选择 `Deploy from a branch`，分支选 `main`，目录选 `/docs`；
 3. 等待 1~2 分钟，访问 `https://<用户名>.github.io/<仓库名>/`。
 
-部署后的域名：`____________________`（发布后填写）
+- 仓库地址：<https://github.com/yuchengwen393/imagegrab>
+- 部署域名：<https://yuchengwen393.github.io/imagegrab/>
 
 ## 技术说明
 
